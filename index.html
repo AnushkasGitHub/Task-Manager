@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Task Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Dashboard</h1>
+
+        <div class="add-task-section card">
+            <h2>Add New Task</h2>
+            <input type="text" id="taskNameInput" placeholder="Task Name (Required)">
+            <textarea id="taskDescriptionInput" placeholder="Description (Optional)"></textarea>
+            <div class="input-group">
+                <label for="taskDueDateInput">Due Date:</label>
+                <input type="date" id="taskDueDateInput">
+            </div>
+            <div class="input-group">
+                <label for="taskEstimatedTimeInput">Est. Time (hours):</label>
+                <input type="number" id="taskEstimatedTimeInput" placeholder="e.g., 2.5" min="0" step="0.5">
+            </div>
+
+            <label for="taskLinkInput">LINK:</label>
+            <input type="url" id="taskLinkInput" placeholder="Link (e.g., https://example.com)">
+
+            <input type="text" id="taskTagsInput" placeholder="Tags (comma-separated)">
+            <textarea id="taskSubtasksInput" placeholder="Subtasks (comma-separated, e.g., Subtask 1, Subtask 2)"></textarea>
+            <div class="input-group urgent-group">
+                <input type="checkbox" id="taskUrgentInput">
+                <label for="taskUrgentInput">Mark as Urgent</label>
+            </div>
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+
+        
+
+        <div class="controls-section card">
+            <h2>Controls & Filters</h2>
+            <div class="filters">
+                <input type="text" id="searchInput" placeholder="Search tasks by name/desc...">
+                <select id="filterStatus">
+                    <option value="all">All Status</option>
+                    <option value="completed">Completed</option>
+                    <option value="not_completed">Not Completed</option>
+                </select>
+                <select id="filterUrgency">
+                    <option value="all">All Urgency</option>
+                    <option value="urgent">Urgent</option>
+                    <option value="not_urgent">Not Urgent</option>
+                </select>
+                <select id="sortDueDate">
+                    <option value="none">Sort by Due Date</option>
+                    <option value="upcoming">Upcoming First</option>
+                    <option value="latest">Latest First</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="analytics-section card">
+            <h2>Productivity Analytics</h2>
+            <div class="chart-container">
+                <canvas id="completionPieChart"></canvas>
+            </div>
+            <div class="total-time-display">
+                <h3>Total Estimated Time (Visible Tasks): <span id="totalEstTime">0</span> hours</h3>
+            </div>
+        </div>
+
+        <div class="task-list-section">
+            <h2>Tasks</h2>
+            <ul id="taskList">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script></body>
+</html>

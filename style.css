@@ -1,0 +1,257 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 15px;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+}
+
+h1, h2, h3 {
+    color: #1c1e21;
+    margin-top: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.input-group {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    margin-right: 10px;
+    font-weight: 500;
+    min-width: 120px; /* Align labels */
+}
+
+.input-group.urgent-group label {
+    min-width: auto; /* Reset for checkbox */
+    font-weight: normal;
+}
+.input-group.urgent-group input[type="checkbox"] {
+    margin-right: 5px;
+    width: auto;
+}
+
+
+button {
+    display: inline-block;
+    background: #1877f2; /* Facebook Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background: #166fe5;
+}
+
+#addTaskBtn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filters input[type="text"],
+.filters select {
+    flex-grow: 1;
+    min-width: 150px; /* Prevent filters from becoming too small */
+    width: auto; /* Override default full width */
+}
+
+.task-list-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list-section li {
+    background: #f7f7f7;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column; /* Stack content and actions vertically */
+    gap: 10px;
+}
+
+.task-list-section li.completed .task-main-info > span:first-child {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list-section li.urgent {
+    border-left: 5px solid #fa383e; /* Red border for urgent */
+}
+.task-list-section li.urgent .urgent-indicator {
+    color: #fa383e;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.task-main-info {
+    font-size: 1.1em;
+    font-weight: 500;
+    flex-grow: 1;
+}
+.task-main-info .task-meta {
+    font-size: 0.85em;
+    color: #606770;
+    display: block; /* Make meta info appear on new line or wrap neatly */
+    margin-top: 4px;
+}
+.task-main-info .task-meta span { margin-right: 10px; }
+
+
+.task-description {
+    font-size: 0.95em;
+    color: #4b4f56;
+    margin: 5px 0;
+}
+
+.subtasks-container {
+    margin-top: 8px;
+    padding-left: 15px;
+    border-left: 2px solid #ccc;
+}
+.subtasks-container h4 {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #333;
+}
+.subtasks-container ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.subtasks-container li {
+    font-size: 0.9em;
+    padding: 5px 0;
+    margin-bottom: 3px;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.subtasks-container input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+}
+.subtasks-container li.completed span {
+    text-decoration: line-through;
+    color: #777;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px; /* Add some space if main content wraps */
+}
+
+.task-actions button {
+    padding: 6px 10px;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.task-actions .delete-btn {
+    background: #fa383e;
+}
+.task-actions .delete-btn:hover {
+    background: #e02020;
+}
+
+.task-actions .complete-btn {
+    background: #42b72a; /* Green */
+}
+.task-actions .complete-btn:hover {
+    background: #36a420;
+}
+
+.chart-container {
+    position: relative;
+    height: 250px; /* Adjust as needed */
+    width: 100%;
+    max-width: 300px; /* Control pie chart size */
+    margin: 15px auto;
+}
+
+.total-time-display {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+    }
+    .filters input[type="text"],
+    .filters select {
+        width: 100%; /* Stack filters on smaller screens */
+    }
+    .task-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .task-actions {
+        width: 100%;
+        justify-content: flex-start; /* Align buttons to the start */
+    }
+}
